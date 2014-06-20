@@ -13,9 +13,13 @@
 			// ----- HEADER
 			require('templates/header.php');
 
+			// ----- BREADCRUMB
+			require('templates/breadcrumb.php');
+
 			// ----- CONTENT
 			// We have to choose content depending on
 			// the parameters given to the page
+			require('templates/content.php');
 
 			// ----- FOOTER
 			require('templates/footer.php');
