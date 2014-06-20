@@ -1,6 +1,10 @@
 <html>
 	<!-- Include HEAD -->
 	<?php
+		require('phpGeneralInclude.php');
+
+		require('lang/' . $LANG . '.php');
+
 		require('templates/head.php');
 	?>
 
