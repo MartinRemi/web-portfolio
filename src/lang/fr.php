@@ -5,4 +5,5 @@
 
 	// ----- HEADER
 	$LOGO_ALT = "Logo";
+	$LANGUAGE = "Langue";
 ?>

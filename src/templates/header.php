@@ -4,7 +4,7 @@
 
 			<!-- LOGO -->
 			<div class="navbar-header">
-				<a class="navbar-brand" href="index.php">
+				<a href="index.php">
 					<?php
 						echo '<img src="' . $LOGO . '" alt="' . $LOGO_ALT . '" width="50" />';
 					?>
@@ -14,9 +14,19 @@
 			<!-- Drop-down language -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Index</a></li>
+					<li>
+						<a href="#">
+							<span class="glyphicon glyphicon-user"></span> Profile
+						</a>
+					</li>
+					<li><a href="#">Lab</a></li>
+					<li><a href="#">Projects</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							Dropdown
+							<?php
+								echo $LANGUAGE;
+							?>
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu">
@@ -29,7 +39,7 @@
 					</li>
 				</ul>
 			</div>
-			
+
 		</div>
 	</nav>
 </header>

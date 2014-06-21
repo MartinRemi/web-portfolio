@@ -15,12 +15,26 @@
 
 			// ----- BREADCRUMB
 			require('templates/breadcrumb.php');
+		?>
 
-			// ----- CONTENT
-			// We have to choose content depending on
-			// the parameters given to the page
-			require('templates/content.php');
 
+		<div class="container">
+			<div class="row">
+				<?php
+					// ----- MENU
+					// DOesn't always appear
+					require('templates/menu.php');
+
+					// ----- CONTENT
+					// We have to choose content depending on
+					// the parameters given to the page
+					require('templates/content.php');
+				?>
+			</div>
+		</div>
+			
+
+		<?php
 			// ----- FOOTER
 			require('templates/footer.php');
 		?>
