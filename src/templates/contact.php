@@ -58,7 +58,11 @@
 					</div>
 				</div>
 				<div class="col-md-12">
-					<button type="submit" class="btn btn-primary pull-right" id="btnContactUs">Send Message</button>
+					<button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+						<?php
+							echo $CONTACT_SEND;
+						?>
+					</button>
 				</div>
 			</div>
 		</form>

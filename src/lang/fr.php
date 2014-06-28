@@ -21,4 +21,5 @@
 	$CONTACT_SUBJECT_PLACEHOLDER = "Entrez votre sujet";
 	$CONTACT_MESSAGE = "Message :";
 	$CONTACT_MESSAGE_PLACEHOLDER = "Message";
+	$CONTACT_SEND = "Envoyer";
 ?>
