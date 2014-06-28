@@ -10,6 +10,7 @@
 			$action = "NONE_ACTION";
 		}
 	} else {
+		$page = "";
 		$view = "index";
 		$action = "NONE_ACTION";
 	}

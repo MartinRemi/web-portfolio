@@ -67,3 +67,10 @@
 <div class="col-md-2">
 	<!-- Used to center content -->
 </div>
+
+<!-- TO MOVE -->
+<script>
+	$("#btnContactUs").click(function(e) {
+		e.preventDefault();
+	});
+</script>
