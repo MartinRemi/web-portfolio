@@ -44,6 +44,11 @@
 							<span class="glyphicon glyphicon-briefcase"></span> Projects
 						</a>
 					</li>
+					<li>
+						<a href="index.php?page=contact">
+							<span class="glyphicon glyphicon-envelope"></span> Contact
+						</a>
+					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<span class="glyphicon glyphicon-globe"></span>

@@ -1,6 +1,6 @@
 <?php
-	function exists($variable) {
-		if(isset($variable) && !empty($variable)) {
+	function get_exists($variable) {
+		if(isset($_GET[$variable]) && !empty($_GET[$variable])) {
 			return true;
 		} else {
 			return false;

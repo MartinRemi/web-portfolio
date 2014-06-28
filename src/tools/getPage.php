@@ -1,7 +1,16 @@
 <?php
-	// if(exists($_GET['page'])){
-	// 	// set $view and $action
-	// } else {
-	// 	// default values
-	// }
+	if(get_exists('page')){
+		$page = $_GET['page'];
+
+		if($page == "index") {
+			$view = "index";
+			$action = "NONE_ACTION";
+		} else if($page == "contact") {
+			$view = "contact";
+			$action = "NONE_ACTION";
+		}
+	} else {
+		$view = "index";
+		$action = "NONE_ACTION";
+	}
 ?>
