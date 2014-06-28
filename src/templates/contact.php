@@ -88,7 +88,7 @@
 			url: 'tools/sendMail.php',
 			data: param,
 			type: 'POST',
-			dataType: JSON,
+			dataType: 'JSON',
 			success: function (data) {
 				if (data.status) {
 					alert("sent");

@@ -1,8 +1,12 @@
 <?php
-	$name = $_POST['name'];
-	$email = $_POST['email'];
-	$subject = $_POST['subject'];
-	$content = $_POST['content'];
+	// $name = $_POST['name'];
+	// $email = $_POST['email'];
+	// $subject = $_POST['subject'];
+	// $content = $_POST['content'];
+	$name = "test";
+	$email = "lol";
+	$subject = "Test";
+	$content = "hihi";
 	header('Content-type: application/json'); 
 	
 	$to = 'martinremi60@gmail.com';
