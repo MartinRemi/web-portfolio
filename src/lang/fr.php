@@ -5,5 +5,10 @@
 
 	// ----- HEADER
 	$LOGO_ALT = "Logo";
-	$LANGUAGE = "Langue";
+	$HEADER_MENU_LANGUAGE = "Langue";
+	$HEADER_MENU_INDEX = "Accueil";
+	$HEADER_MENU_PROFILE = "Profil";
+	$HEADER_MENU_LAB = "Laboratoire";
+	$HEADER_MENU_PROJECTS = "Projets";
+	$HEADER_MENU_CONTACT = "Contact";
 ?>

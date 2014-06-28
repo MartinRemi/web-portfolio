@@ -1,4 +1,5 @@
 <div class="col-md-2">
+	<!-- Used to center content -->
 </div>
 <div class="col-md-8">
 	<div class="well well-sm">
@@ -42,4 +43,5 @@
 	</div>
 </div>
 <div class="col-md-2">
+	<!-- Used to center content -->
 </div>

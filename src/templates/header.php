@@ -24,36 +24,51 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li>
 						<a href="#">
-							<span class="glyphicon glyphicon-home"></span> Index
+							<span class="glyphicon glyphicon-home"></span>
+							<?php
+								echo $HEADER_MENU_INDEX;
+							?>
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<span class="glyphicon glyphicon-user"></span> Profile
+							<span class="glyphicon glyphicon-user"></span>
+							<?php
+								echo $HEADER_MENU_PROFILE;
+							?>
 						</a>
 					</li>
 					<li>
 						<a href="#">
 							<span class="glyphicon">
 								<img src="images/flaskSprite.png" width="16"/>
-							</span> Lab
+							</span>
+							<?php
+								echo $HEADER_MENU_LAB;
+							?>
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<span class="glyphicon glyphicon-briefcase"></span> Projects
+							<span class="glyphicon glyphicon-briefcase"></span>
+							<?php
+								echo $HEADER_MENU_PROJECTS;
+							?>
 						</a>
 					</li>
 					<li>
 						<a href="index.php?page=contact">
-							<span class="glyphicon glyphicon-envelope"></span> Contact
+							<span class="glyphicon glyphicon-envelope"></span>
+							<?php
+								echo $HEADER_MENU_CONTACT;
+							?>
 						</a>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<span class="glyphicon glyphicon-globe"></span>
 							<?php
-								echo $LANGUAGE;
+								echo $HEADER_MENU_LANGUAGE;
 							?>
 							<b class="caret"></b>
 						</a>
