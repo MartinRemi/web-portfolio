@@ -40,7 +40,7 @@
 							<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span>
 							</span>
 							<?php
-								echo '<input type="text" class="form-control" id="service" placeholder="' . $CONTACT_SUBJECT_PLACEHOLDER . '" required="required" />';
+								echo '<input type="text" class="form-control" id="subject" placeholder="' . $CONTACT_SUBJECT_PLACEHOLDER . '" required="required" />';
 							?>
 						</div>
 					</div>
@@ -76,5 +76,26 @@
 <script>
 	$("#btnContactUs").click(function(e) {
 		e.preventDefault();
+
+		var param = {
+			"name": $("#name").val(),
+			"email": $("#email").val(),
+			"subject": $("#subject").val(),
+			"content": $("#message").val()
+		};
+
+		$.ajax({
+			url: 'tools/sendMail.php',
+			data: param,
+			type: 'POST',
+			dataType: JSON,
+			success: function (data) {
+				if (data.status) {
+					alert("sent");
+				} else {
+					alert("not sent");
+				}
+			}
+		});
 	});
 </script>
