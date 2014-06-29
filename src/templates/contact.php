@@ -2,7 +2,7 @@
 	<!-- Used to center content -->
 </div>
 <div class="col-md-8">
-	<div class="well well-sm">
+	<div id="contact_container" class="well well-sm">
 		<form>
 			<div class="row">
 				<div class="col-md-6">
@@ -91,9 +91,9 @@
 			dataType: 'JSON',
 			success: function (data) {
 				if (data.status) {
-					alert("sent");
+					$("#contact_container").append('<div class="alert alert-success" role="alert">Message sent!</div>');
 				} else {
-					alert("not sent");
+					$("#contact_container").append('<div class="alert alert-danger" role="alert">Message not sent! There might have been a problem.</div>');
 				}
 			}
 		});
