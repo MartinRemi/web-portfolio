@@ -1,0 +1,27 @@
+{
+  "name": "y",
+  "version": "y",
+  "homepage": "https://github.com/MartinRemi/web-portfolio",
+  "authors": [
+    "y"
+  ],
+  "description": "My web portfolio",
+  "main": "src/experiment/index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "web"
+  ],
+  "license": "y",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.3.3"
+  }
+}
