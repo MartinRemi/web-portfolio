@@ -1,3 +1,4 @@
+<?php // TODO: change layout so that it is responsible ?>
 <html>
 	<!-- Include HEAD -->
 	<?php
