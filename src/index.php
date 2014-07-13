@@ -30,7 +30,7 @@
 						require('templates/menu.php');
 	
 						// ----- CONTENT
-						// We have to choose content depending on
+						// Choose the content depending on
 						// the parameters given to the page
 						require('templates/content.php');
 					}
