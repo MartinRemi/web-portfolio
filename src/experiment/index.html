@@ -6,79 +6,13 @@
 
 		<!-- 2. Use an HTML Import to bring in the element. -->
 		<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
-		<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+		<link rel="import" href="../../bower_components/paper-fab/paper-fab.html">
+    <link rel="stylesheet" href="../../bower_components/paper-button/paper-button.css">
+    <link rel="stylesheet" href="../../bower_components/paper-fab/paper-fab.css">
 	</head>
 	<body>
-		<paper-button label="flat button"></paper-button>
-		
-		<!-- 3. Declare the element. Configure using its attributes. -->
-		<paper-radio-group class="blue" selected="0" role="radiogroup">
-  
-    
-  
-    
-    <core-selection id="selection" multi="{{multi}}" on-core-select="{{ selectionSelect }}" hidden=""></core-selection>
-    <paper-radio-button label="Auto" role="radio" tabindex="0" aria-checked="false" class="" aria-label="Auto">
-
-  
-  
-  <div id="radioContainer" class="labeled">
-  
-    <div id="offRadio"></div>
-    <div id="onRadio" class=""></div>
-    
-    <paper-ripple id="ink" class="circle recenteringTouch" checked="">
-
-  
-
-<canvas id="canvas"></canvas></paper-ripple>
-    
-  </div>
-  
-  <div id="radioLabel" aria-hidden="true">Auto</div>
-  
-</paper-radio-button><br><paper-radio-button label="5 GHz only" role="radio" tabindex="0" aria-checked="true" aria-label="5 GHz only" checked="" class="core-selected">
-
-  
-  
-  <div id="radioContainer" class="labeled">
-  
-    <div id="offRadio"></div>
-    <div id="onRadio" class="fill"></div>
-    
-    <paper-ripple id="ink" class="circle recenteringTouch">
-
-  
-
-<canvas id="canvas" width="100px" height="100px"></canvas></paper-ripple>
-    
-  </div>
-  
-  <div id="radioLabel" aria-hidden="true">5 GHz only</div>
-  
-</paper-radio-button><br><paper-radio-button label="2.4 GHz only" role="radio" tabindex="0" aria-checked="false" aria-label="2.4 GHz only">
-
-  
-  
-  <div id="radioContainer" class="labeled">
-  
-    <div id="offRadio"></div>
-    <div id="onRadio"></div>
-    
-    <paper-ripple id="ink" class="circle recenteringTouch" checked="">
-
-  
-
-<canvas id="canvas"></canvas></paper-ripple>
-    
-  </div>
-  
-  <div id="radioLabel" aria-hidden="true">2.4 GHz only</div>
-  
-</paper-radio-button>
-  
-    
-  </paper-radio-group>
+		<paper-button label="flat button" style="background: blue; color: white;"></paper-button>
+    <paper-fab icon="add"></paper-fab>
 
 		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script>
