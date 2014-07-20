@@ -3,7 +3,7 @@
 /**
  *	Model 'User', used to manipulate user related data from the database
  */
-class User extends CI_Model
+class UserModel extends CI_Model
 {
 	// ----- Static Member(s)
 	protected $table = 'user';
@@ -47,6 +47,19 @@ class User extends CI_Model
 					->select('*')
 					->from($this->table)
 					->where('email', $email)
+					->get()
+					->result();
+	}
+
+	/**
+	 *	Return the user with the username equals to $username
+	 */
+	public function retrieveByUsername($username)
+	{
+		return $this->db
+					->select('*')
+					->from($this->table)
+					->where('username', $username)
 					->get()
 					->result();
 	}

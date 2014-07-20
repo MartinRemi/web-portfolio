@@ -19,7 +19,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->model('user', 'User');
+		$this->load->model('userModel', 'User');
 		//$this->User->insert('nick', 'martinremi60@gmail.com', 'nick');
 		$data = array();
 		$data['user'] = $this->User->retrieveByEmail('martinremi160@gmail.com');

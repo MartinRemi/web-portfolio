@@ -1,4 +1,7 @@
-<form>
+<?php
+	echo $input_error;
+?>
+<form method="post">
 	<fieldset>
 		<legend>Sign up form</legend>
 		<input type="hidden" name="sent" value="yes">
