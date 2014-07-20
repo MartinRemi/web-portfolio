@@ -22,8 +22,7 @@ class Welcome extends CI_Controller {
 		$this->load->model('user', 'User');
 		//$this->User->insert('nick', 'martinremi60@gmail.com', 'nick');
 		$data = array();
-		$this->User->changePassword(2, 'lol');
-		$data['username'] = $this->input->post('username');
+		$data['user'] = $this->User->retrieveByEmail('martinremi160@gmail.com');
 		$this->load->view('welcome_message', $data);
 	}
 }
