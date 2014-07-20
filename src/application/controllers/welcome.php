@@ -20,8 +20,10 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('user', 'User');
-		$this->User->insert('nick');
-		$this->load->view('welcome_message');
+		//$this->User->insert('nick', 'martinremi60@gmail.com', 'nick');
+		$data = array();
+		$this->User->changePassword(2, 'lol');
+		$this->load->view('welcome_message', $data);
 	}
 }
 

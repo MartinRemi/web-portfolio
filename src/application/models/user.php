@@ -6,12 +6,42 @@ class User extends CI_Model
 	protected $table = 'user';
 
 	// ----- Method(s)
-	public function insert($username)
+	public function insert($username, $email, $password)
 	{
-		//	Ces données seront automatiquement échappées
+		//	Set query parameters
 		$this->db->set('username',  $username);
+		$this->db->set('email',  $email);
+		$this->db->set('password',  sha1($password));
 
-		//	Une fois que tous les champs ont bien été définis, on "insert" le tout
+		//	Insert
 		return $this->db->insert($this->table);
+	}
+
+	public function retrieve($id)
+	{
+		return $this->db
+					->select('*')
+					->from($this->table)
+					->where('id', (int)$id)
+					->get()
+					->result();
+	}
+
+	public function retrieveByEmail($email)
+	{
+		return $this->db
+					->select('*')
+					->from($this->table)
+					->where('email', $email)
+					->get()
+					->result();
+	}
+
+	public function changePassword($id, $password) 
+	{
+		return $this->db
+					->set('password', sha1($password))
+					->where('id', (int)$id)
+					->update($this->table);
 	}
 }
