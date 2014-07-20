@@ -1,11 +1,19 @@
 <?php
 
+/**
+ *	Model 'User', used to manipulate user related data from the database
+ */
 class User extends CI_Model
 {
 	// ----- Static Member(s)
 	protected $table = 'user';
 
 	// ----- Method(s)
+	/**
+	 *	Insert a new row in the database
+	 *	@return true if a new row has been added
+	 *			else false
+	 */
 	public function insert($username, $email, $password)
 	{
 		//	Set query parameters
@@ -17,6 +25,9 @@ class User extends CI_Model
 		return $this->db->insert($this->table);
 	}
 
+	/**
+	 *	Return the user with the id equals to $id
+	 */
 	public function retrieve($id)
 	{
 		return $this->db
@@ -27,6 +38,9 @@ class User extends CI_Model
 					->result();
 	}
 
+	/**
+	 *	Return the user with the email equals to $email
+	 */
 	public function retrieveByEmail($email)
 	{
 		return $this->db
@@ -37,6 +51,9 @@ class User extends CI_Model
 					->result();
 	}
 
+	/**
+	 *	Change the password of the user
+	 */
 	public function changePassword($id, $password) 
 	{
 		return $this->db
