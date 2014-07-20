@@ -26,19 +26,25 @@ class User extends CI_Controller
 			$email = $this->input->post('email');
 			$password = $this->input->post('password');
 
-			if($username === false) {
+			if($username === false || $username == "") {
 				$completed = false;
-				$data['input_error'] .= "You must set a username";
+				$data['input_error'] .= "<li>You must set a username</li>";
 			}
 
-			if($email === false) {
+			if($email === false || $email == "") {
 				$completed = false;
-				$data['input_error'] .= "You must set an email.";
+				$data['input_error'] .= "<li>You must set an email.</li>";
+			} else {
+				$this->load->helper('email');
+				if(!valid_email($email)) {
+					$completed = false;
+					$data['input_error'] .= "<li>The email provided is not valid.</li>";
+				}
 			}
 
-			if($password === false) {
+			if($password === false || $password == "") {
 				$completed = false;
-				$data['input_error'] .= 'You must set a password';
+				$data['input_error'] .= '<li>You must set a password</li>';
 			}
 
 			if($completed) {
@@ -47,12 +53,12 @@ class User extends CI_Controller
 
 				if(!empty($this->User->retrieveByUsername($username))) {
 					$completed = false;
-					$data['input_error'] .= "The username provided is already taken.";
+					$data['input_error'] .= "<li>The username provided is already taken.</li>";
 				}
 
 				if(!empty($this->User->retrieveByEmail($email))) {
 					$completed = false;
-					$data['input_error'] = "The email provided is already being used.";
+					$data['input_error'] = "<li>The email provided is already being used.</li>";
 				}
 
 				if($completed) {
@@ -60,6 +66,8 @@ class User extends CI_Controller
 				} else {
 					$this->load->view('user_signup_form', $data);
 				}
+			} else {
+				$this->load->view('user_signup_form', $data);
 			}
 		}
 	}

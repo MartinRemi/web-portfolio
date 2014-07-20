@@ -1,5 +1,7 @@
 <?php
-	echo $input_error;
+	if($input_error != "") {
+		echo 'The following errors has been encountered: <ul>' . $input_error . '</ul>';
+	}
 ?>
 <form method="post">
 	<fieldset>
