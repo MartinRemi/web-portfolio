@@ -2,4 +2,4 @@ web-portfolio
 =============
 
 ## Presentation
-Personnal webportfolio
+Personnal webportfolio developped with php and js.
