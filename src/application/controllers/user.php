@@ -18,7 +18,7 @@ class User extends CI_Controller
 		$data['input_error'] = "";
 
 		if($this->input->post('sent') === false) {
-			$this->load->view('user_signup_form');
+			$this->load->view('user_signup_form', $data);
 		} else {
 			$completed = true;
 
