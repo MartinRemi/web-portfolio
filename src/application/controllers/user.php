@@ -88,9 +88,26 @@ class User extends CI_Controller
 
 		if(!$this->session->userdata('username')) {
 			if($this->input->post('signin_sent') === false) {
+				// TODO: Create view
 				$this->load->view('user_signin_form', $data);
 			} else {
+				$email = $this->input->post('email');
+				$password = $this->input->post('password');
 
+				if(! $email) {
+					$data['signin_input_error'] .= '<li>' . $this->lang->line('error_missing_email') . '</li>';
+				}
+
+				if(! $password) {
+					$data['signin_input_error'] .= '<li>' . $this->lang->line('error_missing_password') . '</li>';
+				}
+
+				if($data['signin_input_error'] == "") {
+
+				} else {
+					// TODO: Create view
+					$this->load->view('user_signin_form', $data);
+				}
 			}
 		} else {
 			$data['rm_error'] = $this->lang->line('error_already_connected');
