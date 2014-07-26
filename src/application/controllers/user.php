@@ -20,15 +20,16 @@ class User extends CI_Controller
 
 		$data['error_encountered_errors'] = $this->lang->line('error_encountered_errors');
 
-		if($this->input->post('signup_sent') === false) {
+		if($this->input->post('signup_sent') === false) { // Form not sent
 			$this->load->view('user_signup_form', $data);
-		} else {
+		} else { // Sent
 			$completed = true;
 
 			$username = $this->input->post('username');
 			$email = $this->input->post('email');
 			$password = $this->input->post('password');
 
+			// Check for input received
 			if($username === false || $username == "") {
 				$completed = false;
 				$data['input_error'] .= "<li>" . $this->lang->line('error_missing_username') . "</li>";
@@ -50,10 +51,12 @@ class User extends CI_Controller
 				$data['input_error'] .= '<li>' . $this->lang->line('error_missing_password') . '</li>';
 			}
 
+			// If everything has been received, some more check
 			if($completed) {
 				// Using user model
 				$this->load->model('userModel', 'User');
 
+				// Check for unique constraints
 				if(!empty($this->User->retrieveByUsername($username))) {
 					$completed = false;
 					$data['input_error'] .= "<li>" . $this->lang->line('error_taken_username') . "</li>";
@@ -64,6 +67,7 @@ class User extends CI_Controller
 					$data['input_error'] = "<li>" . $this->lang->line('error_taken_email') . "</li>";
 				}
 
+				// Everything is OK, we have a new user yay!
 				if($completed) {
 					$this->User->insert($username, $email, $password);
 					$data['rm_error'] = $this->lang->line('success_account_created');
@@ -83,14 +87,14 @@ class User extends CI_Controller
 		$data['signin_input_error'] = "";
 
 		if(!$this->session->userdata('username')) {
-			$data['rm_error'] = "You are already connected.";
-			$this->load->view('error_display', $data);
-		} else {
 			if($this->input->post('signin_sent') === false) {
 				$this->load->view('user_signin_form', $data);
 			} else {
 
 			}
+		} else {
+			$data['rm_error'] = $this->lang->line('error_already_connected');
+			$this->load->view('error_display', $data);
 		}
 	}
 }
