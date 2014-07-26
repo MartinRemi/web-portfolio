@@ -63,6 +63,8 @@ class User extends CI_Controller
 
 				if($completed) {
 					$this->User->insert($username, $email, $password);
+					$data['rm_error'] = "Your account has been successfully created.";
+					$this->load->view('error_display', $data);
 				} else {
 					$this->load->view('user_signup_form', $data);
 				}
