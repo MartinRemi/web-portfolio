@@ -1,6 +1,6 @@
 <?php
 	if($input_error != "") {
-		echo 'The following errors has been encountered: <ul>' . $input_error . '</ul>';
+		echo $error_encountered_errors . ' <ul>' . $input_error . '</ul>';
 	}
 ?>
 <form method="post">

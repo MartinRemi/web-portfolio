@@ -14,8 +14,11 @@ class User extends CI_Controller
 
 	public function signup()
 	{
+		$this->lang->load('english', 'english');
 		$data = array();
 		$data['input_error'] = "";
+
+		$data['error_encountered_errors'] = $this->lang->line('error_encountered_errors');
 
 		if($this->input->post('signup_sent') === false) {
 			$this->load->view('user_signup_form', $data);
@@ -28,23 +31,23 @@ class User extends CI_Controller
 
 			if($username === false || $username == "") {
 				$completed = false;
-				$data['input_error'] .= "<li>You must set a username</li>";
+				$data['input_error'] .= "<li>" . $this->lang->line('error_missing_username') . "</li>";
 			}
 
 			if($email === false || $email == "") {
 				$completed = false;
-				$data['input_error'] .= "<li>You must set an email.</li>";
+				$data['input_error'] .= "<li>" . $this->lang->line('error_missing_email') . "</li>";
 			} else {
 				$this->load->helper('email');
 				if(!valid_email($email)) {
 					$completed = false;
-					$data['input_error'] .= "<li>The email provided is not valid.</li>";
+					$data['input_error'] .= "<li>" . $this->lang->line('error_invalid_email') . "</li>";
 				}
 			}
 
 			if($password === false || $password == "") {
 				$completed = false;
-				$data['input_error'] .= '<li>You must set a password</li>';
+				$data['input_error'] .= '<li>' . $this->lang->line('error_missing_password') . '</li>';
 			}
 
 			if($completed) {
@@ -53,17 +56,17 @@ class User extends CI_Controller
 
 				if(!empty($this->User->retrieveByUsername($username))) {
 					$completed = false;
-					$data['input_error'] .= "<li>The username provided is already taken.</li>";
+					$data['input_error'] .= "<li>" . $this->lang->line('error_taken_username') . "</li>";
 				}
 
 				if(!empty($this->User->retrieveByEmail($email))) {
 					$completed = false;
-					$data['input_error'] = "<li>The email provided is already being used.</li>";
+					$data['input_error'] = "<li>" . $this->lang->line('error_taken_email') . "</li>";
 				}
 
 				if($completed) {
 					$this->User->insert($username, $email, $password);
-					$data['rm_error'] = "Your account has been successfully created.";
+					$data['rm_error'] = $this->lang->line('success_account_created');
 					$this->load->view('error_display', $data);
 				} else {
 					$this->load->view('user_signup_form', $data);
