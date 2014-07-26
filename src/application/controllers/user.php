@@ -17,7 +17,7 @@ class User extends CI_Controller
 		$data = array();
 		$data['input_error'] = "";
 
-		if($this->input->post('sent') === false) {
+		if($this->input->post('signup_sent') === false) {
 			$this->load->view('user_signup_form', $data);
 		} else {
 			$completed = true;
@@ -76,6 +76,18 @@ class User extends CI_Controller
 
 	public function signin()
 	{
+		$data = array();
+		$data['signin_input_error'] = "";
 
+		if(!$this->session->userdata('username')) {
+			$data['rm_error'] = "You are already connected.";
+			$this->load->view('error_display', $data);
+		} else {
+			if($this->input->post('signin_sent') === false) {
+				$this->load->view('user_signin_form', $data);
+			} else {
+
+			}
+		}
 	}
 }
