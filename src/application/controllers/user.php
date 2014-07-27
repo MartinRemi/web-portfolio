@@ -4,12 +4,28 @@ class User extends CI_Controller
 {
 	public function index()
 	{
-		
+		if(!$this->session->userdata('username')) {
+			$data = array();
+			$data['rm_error'] = $this->lang->line('success_account_signin');
+			$this->load->view('error_display', $data);
+		} else {
+			$this->profile();
+		}
 	}
 
 	public function profile()
 	{
-		
+		$data = array();
+		if(!$this->session->userdata('username')) {
+			$data['rm_error'] = $this->lang->line('success_account_signin');
+			$this->load->view('error_display', $data);
+		} else {
+			// Using user model
+			$this->load->model('userModel', 'User');
+			$usr = $this->User->retrieveByUsername($this->session->userdata('username'))[0];
+			$data['rm-username'] = $usr->username;
+			$data['rm-email'] = $usr->email;
+		}
 	}
 
 	public function signup()
