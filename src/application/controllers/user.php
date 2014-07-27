@@ -86,6 +86,8 @@ class User extends CI_Controller
 		$data = array();
 		$data['signin_input_error'] = "";
 
+		$data['error_encountered_errors'] = $this->lang->line('error_encountered_errors');
+
 		if(!$this->session->userdata('username')) {
 			if($this->input->post('signin_sent') === false) {
 				// TODO: Create view
