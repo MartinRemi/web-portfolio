@@ -83,6 +83,7 @@ class User extends CI_Controller
 
 	public function signin()
 	{
+		$this->lang->load('english', 'english');
 		$data = array();
 		$data['signin_input_error'] = "";
 
@@ -105,7 +106,21 @@ class User extends CI_Controller
 				}
 
 				if($data['signin_input_error'] == "") {
+					// Using user model
+					$this->load->model('userModel', 'User');
 
+					if($usr = $this->User->retrieveByEmail($email)) {
+						if(sha1($password) == $usr[0]->password) {
+							$data['rm_error'] = $this->lang->line('success_account_signin');
+							$this->load->view('error_display', $data);
+						} else {
+							$data['signin_input_error'] .= '<li>' . $this->lang->line('error_wrong_info') . '</li>';
+							$this->load->view('user_signin_form', $data);
+						}
+					} else {
+						$data['signin_input_error'] .= '<li>' . $this->lang->line('error_wrong_info') . '</li>';
+						$this->load->view('user_signin_form', $data);
+					}
 				} else {
 					// TODO: Create view
 					$this->load->view('user_signin_form', $data);

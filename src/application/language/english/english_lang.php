@@ -17,4 +17,8 @@
 
 		$lang['error_taken_username'] = "The username provided is already taken";
 		$lang['error_taken_email'] = "The email address provided is already being used";
+
+		// Sign in
+		$lang['error_wrong_info'] = "The information provided are wrong";
+		$lang['success_account_signin'] = "You're now properly logged in.";
 ?>
