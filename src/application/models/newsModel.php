@@ -17,7 +17,7 @@ class NewsModel extends CI_Model
 	public function insert($author, $title, $content, $date)
 	{
 		//	Set query parameters
-		$this->db->set('author', $author);
+		$this->db->set('id_author', $author);
 		$this->db->set('title', $title);
 		$this->db->set('content', sha1($content));
 		$this->db->set('date', date('Y-m-d H:i:s')); // Now

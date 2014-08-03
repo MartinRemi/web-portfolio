@@ -5,6 +5,10 @@ web-portfolio
 Personnal webportfolio developped with php and js.
 
 ## Currently working
-Design
-Sign in
-Sign up
+- Sign in
+- Sign up
+- News display
+
+## TODOs
+- Work design
+- Change view for design
