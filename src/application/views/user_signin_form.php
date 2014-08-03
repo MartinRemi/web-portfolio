@@ -3,7 +3,7 @@
 		echo $error_encountered_errors . ' <ul>' . $signin_input_error . '</ul>';
 	}
 ?>
-<form method="post">
+<form method="post" action="<?php echo $this->config->base_url(); ?>index.php/user/signin">
 	<fieldset>
 		<legend>Sign up form</legend>
 		<input type="hidden" name="signin_sent" value="yes">

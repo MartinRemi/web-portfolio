@@ -6,8 +6,8 @@ class User extends CI_Controller
 	{
 		if(!$this->session->userdata('username')) {
 			$data = array();
-			$data['rm_error'] = $this->lang->line('success_account_signin');
-			$this->load->view('error_display', $data);
+			$data['signin_input_error'] = "";
+			$this->load->view('user_signin_form', $data);
 		} else {
 			$this->profile();
 		}
