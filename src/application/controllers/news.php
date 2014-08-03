@@ -16,35 +16,36 @@ class News extends CI_Controller
 	public function add()
 	{
 		$data = array();
-		$data['input_error'] = "";
+		$data['news_add_input_error'] = "";
+		$data['error_encountered_errors'] = $this->lang->line('error_encountered_errors');
 
 		if(!$this->session->userdata('username')) {
 			$data['rm_error'] = $this->lang->line('error_not_connected');
 			$this->load->view('error_display', $data);
 		} else {
 			if($this->input->post('news_add_sent') === false) { // Form not sent
-				//$this->load->view('user_signup_form', $data);
+				$this->load->view('news_add_form', $data);
 			} else {
 				$completed = true;
 	
 				$title = $this->input->post('title');
 				$content = $this->input->post('content');
-				$id_author = $this->session->userdata('username');
+				$id_author = $this->session->userdata('id');
 
 				if($title === false || $title == "") {
 					$completed = false;
-					$data['input_error'] .= $this->lang->line('error_news_no_title');
+					$data['news_add_input_error'] .= $this->lang->line('error_news_no_title');
 				}
 				if($content === false || $content == "") {
 					$completed = false;
-					$data['input_error'] .= $this->lang->line('error_news_no_content');
+					$data['news_add_input_error'] .= $this->lang->line('error_news_no_content');
 				}
 
 				if($completed) {
 					$this->load->model('newsModel', 'News');
 					$this->News->insert($id_author, $title, $content);
 					$data['rm_error'] = $this->lang->line('success_account_created');
-					$this->load->view('success_news_add', $data);
+					$this->load->view('error_display', $data);
 				} else {
 					$this->load->view('error_display', $data);
 				}

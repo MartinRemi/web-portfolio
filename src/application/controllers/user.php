@@ -128,6 +128,7 @@ class User extends CI_Controller
 					if($usr = $this->User->retrieveByEmail($email)) {
 						if(sha1($password) == $usr[0]->password) {
 							$this->session->set_userdata('username', $usr[0]->username);
+							$this->session->set_userdata('id', $usr[0]->id);
 							$data['rm_error'] = $this->lang->line('success_account_signin');
 							$this->load->view('error_display', $data);
 						} else {
