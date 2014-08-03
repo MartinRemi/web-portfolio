@@ -4,6 +4,9 @@
 		// Sign up
 		$lang['success_account_created'] = "Your account has been properly created.";
 
+		// Add news
+		$lang['success_news_add'] = "The news has been added to the database.";
+
 	// ----- ERROR MESSAGES
 	$lang['error_encountered_errors'] = 'The following errors have been encountered:';
 	$lang['error_already_connected'] = "You are already connected.";
@@ -21,4 +24,9 @@
 		// Sign in
 		$lang['error_wrong_info'] = "The information provided are wrong";
 		$lang['success_account_signin'] = "You're now properly logged in.";
+
+		// Add news
+		$lang['error_not_connected'] = "You're not connected. You can not post a news.";
+		$lang['error_news_no_title'] = "You must set a title.";
+		$lang['error_news_no_content'] = "You must set the content of the news.";
 ?>

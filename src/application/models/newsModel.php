@@ -14,7 +14,7 @@ class NewsModel extends CI_Model
 	 *	@return true if a new row has been added
 	 *			else false
 	 */
-	public function insert($author, $title, $content, $date)
+	public function insert($author, $title, $content)
 	{
 		//	Set query parameters
 		$this->db->set('id_author', $author);
