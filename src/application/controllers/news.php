@@ -35,11 +35,11 @@ class News extends CI_Controller
 
 				if($title === false || $title == "") {
 					$completed = false;
-					$data['news_add_input_error'] .= $this->lang->line('error_news_no_title');
+					$data['news_add_input_error'] .= '<li>' . $this->lang->line('error_news_no_title') . '</li>';
 				}
 				if($content === false || $content == "") {
 					$completed = false;
-					$data['news_add_input_error'] .= $this->lang->line('error_news_no_content');
+					$data['news_add_input_error'] .= '<li>' . $this->lang->line('error_news_no_content') . '</li>';
 				}
 
 				if($completed) {
