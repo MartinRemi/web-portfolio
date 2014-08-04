@@ -2,6 +2,7 @@
 
 /**
  *	Model 'User', used to manipulate user related data from the database
+ *	TODO: fix eror messages
  */
 class NewsModel extends CI_Model
 {

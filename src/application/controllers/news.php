@@ -15,6 +15,7 @@ class News extends CI_Controller
 
 	public function add()
 	{
+		$this->lang->load('english', 'english');
 		$data = array();
 		$data['news_add_input_error'] = "";
 		$data['error_encountered_errors'] = $this->lang->line('error_encountered_errors');
@@ -47,7 +48,7 @@ class News extends CI_Controller
 					$data['rm_error'] = $this->lang->line('success_account_created');
 					$this->load->view('error_display', $data);
 				} else {
-					$this->load->view('error_display', $data);
+					$this->load->view('news_add_form', $data);
 				}
 			}
 		}
