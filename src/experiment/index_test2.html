@@ -31,6 +31,12 @@
 
 	.rm-top-navbar {
 		border-radius: 0;
+		background: white;
+		border: 0;
+	}
+
+	.rm-top-navbar li .rm-nav-link {
+		color: #c5c5c5 !important;
 	}
 
 	.header_title {
@@ -59,8 +65,12 @@
 
 	<body>
 		<div class="container-fluid">
+
+			<!-- HEADER -->
 			<header id="rm-page-header">
-				<div class="row">
+
+				<!-- TOP NAV -->
+				<nav class="row">
 					<nav class="navbar navbar-default rm-top-navbar" role="navigation">
 						<div class="container">
 							<div class="navbar-header">
@@ -73,14 +83,16 @@
 							</div>
 							<div class="collapse navbar-collapse">
 								<ul class="nav navbar-nav navbar-right">
-									<li><a class="nav-link" href="getting-started.html">Getting Started</a></li>
-									<li><a class="nav-link" href="documentation.html">Documentation</a></li>
-									<li><a class="nav-link" href="free-psd.html">Free PSD</a></li>
+									<li><a class="nav-link rm-nav-link" href="getting-started.html">Getting Started</a></li>
+									<li><a class="nav-link rm-nav-link" href="documentation.html">Documentation</a></li>
+									<li><a class="nav-link rm-nav-link" href="free-psd.html">Free PSD</a></li>
 								</ul>
 							</div>
 						</div>
 					</nav>
-				</div>
+				</nav>
+
+				<!-- LOGO, NAME AND IMAGE -->
 				<div id="logo">
 					<img src="images/logo-mask.png" alt="logo" title="logo">
 					<h2 class="header_title">
@@ -89,6 +101,8 @@
 					</h2>
 				</div>
 			</header>
+
+
 			<div id="content">
 				<div class="row">
 					<div class="col-md-2 text-center">
