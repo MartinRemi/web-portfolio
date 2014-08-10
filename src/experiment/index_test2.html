@@ -29,6 +29,10 @@
 		text-align: center;
 	}
 
+	.rm-top-navbar {
+		border-radius: 0;
+	}
+
 	.header_title {
 		font: 900 90px/100px "Helvetica Neue", Helvetica, Arial, sans-serif;
 		color: #34495e;
@@ -42,79 +46,94 @@
 	.rm-thumbnail h3 {
 		color: #34495e;
 	}
+
+	.header_title small {
+		color: white;
+	}
+
+	/* ----- LAYOUT FIXES ----- */
+	.rm-row {
+		margin: 0!important;
+	}
 	</style>
 
 	<body>
-		<header>
-			<div id="logo">
-				<img src="images/logo-mask.png" alt="logo" title="logo">
-				<h2 class="header_title">
-					Rémi MARTIN<br />
-					<small>Web portfolio</small>
-				</h2>
-			</div>
-		</header>
-		<div id="content">
-			<div class="row">
-				<div class="col-md-2 text-center">
-					<div class="btn-group-vertical affix">
-						<button type="button" class="btn btn-success"><i class="glyphicon glyphicon-home"></i></button>
-						<button type="button" class="btn btn-success"><i class="glyphicon glyphicon-user"></i></button>
-						<button type="button" class="btn btn-success"><i class="glyphicon glyphicon-comment"></i></button>
-						<button type="button" class="btn btn-success"><i class="glyphicon glyphicon-cog"></i></button>
-					</div>
-				</div>
-				<div class="col-md-8 col-xs-12">
-					<div id="carousel-example-generic" class="carousel slide rm-carousel-slide" data-ride="carousel">
-						<ol class="carousel-indicators">
-							<li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
-							<li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
-							<li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-						</ol>
-						<div class="carousel-inner">
-							<div class="item"><img src="img/slider1.jpg"></div>
-							<div class="item active"><img src="img/slider2.jpg"></div>
-							<div class="item"><img src="img/slider3.jpg"></div>
-						</div>
-						<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-							<span class="glyphicon glyphicon-chevron-left"></span>
-						</a>
-						<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-							<span class="glyphicon glyphicon-chevron-right"></span>
-						</a>
-					</div>
-				</div>
-			</div>
-			<br />
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="col-md-4 col-xs-4">
-						<div class="thumbnail rm-thumbnail">
-							<img class="img-rounded" src="img/thumbnail-2.jpg">
-							<div class="caption text-center">
-								<h3>Thumbnail label</h3>
-								<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id ...</p>
-								<p><a href="#" class="btn btn-warning" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+		<div class="container-fluid">
+			<header id="rm-page-header">
+				<div class="row">
+					<nav class="navbar navbar-default rm-top-navbar" role="navigation">
+						<div class="container">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div>
+							<div class="collapse navbar-collapse">
+								<ul class="nav navbar-nav navbar-right">
+									<li><a class="nav-link" href="getting-started.html">Getting Started</a></li>
+									<li><a class="nav-link" href="documentation.html">Documentation</a></li>
+									<li><a class="nav-link" href="free-psd.html">Free PSD</a></li>
+								</ul>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-4 col-xs-4">
-						<div class="thumbnail rm-thumbnail">
-							<img class="img-rounded" src="img/thumbnail-2.jpg">
-							<div class="caption text-center">
-								<h3>Thumbnail label</h3>
-								<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id ...</p>
-								<p><a href="#" class="btn btn-warning" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-							</div>
+					</nav>
+				</div>
+				<div id="logo">
+					<img src="images/logo-mask.png" alt="logo" title="logo">
+					<h2 class="header_title">
+						Rémi MARTIN<br />
+						<small>Web portfolio</small>
+					</h2>
+				</div>
+			</header>
+			<div id="content">
+				<div class="row">
+					<div class="col-md-2 text-center">
+						<div class="btn-group-vertical affix">
+							<button type="button" class="btn btn-success"><i class="glyphicon glyphicon-home"></i></button>
+							<button type="button" class="btn btn-success"><i class="glyphicon glyphicon-user"></i></button>
+							<button type="button" class="btn btn-success"><i class="glyphicon glyphicon-comment"></i></button>
+							<button type="button" class="btn btn-success"><i class="glyphicon glyphicon-cog"></i></button>
 						</div>
 					</div>
-					<div class="col-md-4 col-xs-4">
-						<div class="thumbnail rm-thumbnail">
-							<img class="img-rounded" src="img/thumbnail-2.jpg">
-							<div class="caption text-center">
-								<h3>Thumbnail label</h3>
-								<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id ...</p>
-								<p><a href="#" class="btn btn-warning" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+					<div class="col-md-8 col-xs-12">
+						
+					</div>
+				</div>
+				<br />
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="col-md-4 col-xs-4">
+							<div class="thumbnail rm-thumbnail">
+								<img class="img-rounded" src="img/thumbnail-2.jpg">
+								<div class="caption text-center">
+									<h3>Thumbnail label</h3>
+									<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id ...</p>
+									<p><a href="#" class="btn btn-warning" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-xs-4">
+							<div class="thumbnail rm-thumbnail">
+								<img class="img-rounded" src="img/thumbnail-2.jpg">
+								<div class="caption text-center">
+									<h3>Thumbnail label</h3>
+									<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id ...</p>
+									<p><a href="#" class="btn btn-warning" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-xs-4">
+							<div class="thumbnail rm-thumbnail">
+								<img class="img-rounded" src="img/thumbnail-2.jpg">
+								<div class="caption text-center">
+									<h3>Thumbnail label</h3>
+									<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id ...</p>
+									<p><a href="#" class="btn btn-warning" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+								</div>
 							</div>
 						</div>
 					</div>
