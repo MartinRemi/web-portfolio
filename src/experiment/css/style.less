@@ -1,7 +1,8 @@
-@first-color: #4FC1E9;
+@blue-shade: #4FC1E9;
+@first-color: #f3f4f7;
 
 body {
-	background: #eeeeee;
+	background: white;
 }
 
 /* ----- HEADER ----- */
@@ -11,30 +12,32 @@ body {
 		background: white;
 		border: 0;
 		margin-bottom: 0;
+		box-shadow: 0 0 2px rgba(0,0,0,.2);
 
 		.rm-nav-link {
 			color: #c5c5c5 !important;
 		}
 
 		.rm-activated-nav-link {
-			background: @first-color;
+			background: @blue-shade;
 			color: white !important;
 		}
 	}
 
 	/* Banner */
 	#logo {
-		padding-top: 20px;
+		padding-top: 30px;
+		padding-bottom: 20px;
 		text-align: center;
 		background: @first-color;
 	}
 
 	.header_title {
 		font: 900 90px/100px "Helvetica Neue", Helvetica, Arial, sans-serif;
-		color: #34495e;
+		color: @blue-shade;
 
 		small {
-			/*color: white;*/
+			color: #34495e;
 			font-size: 0.3em;
 		}
 	}
