@@ -10,5 +10,5 @@ Personnal webportfolio developped with php and js.
 - News display
 
 ## TODOs
-- Work design
+- Work design (first version available : experiments)
 - Change view for design
